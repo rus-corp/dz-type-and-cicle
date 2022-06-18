@@ -62,9 +62,10 @@
 #     if list(geo.values())[0][1] == 'Россия':
 #         print(geo)
 
-name = 'abrakadabra'
-print(name.replace("ab", ""))
+# name = 'abrakadabra'
+# print(name.replace("ab", ""))
 
-
-
+places = [20, 40, 100, 32, 54, 78, 12, 4, 99]
+car = 350
+weight = []
 
