@@ -127,8 +127,6 @@
 
 # print(students_list)
 
-
-
 documents = [
         {"type": "passport", "number": "2207 876234", "name": "Василий Гупкин"},
         {"type": "invoice", "number": "11-2", "name": "Геннадий Покемонов"},
@@ -149,6 +147,8 @@ directories = {
         '5': []
 }
 
+
+
 def search_people(documents):
   doc_numb =input("doc number?: ")
   for doc in documents:
@@ -156,6 +156,8 @@ def search_people(documents):
       return f' {doc["name"]} {doc["number"]}'
   else:
     print("no this document")
+
+
 
 def shelf(directories):
   doc_numb = input("doc number?: ")
@@ -169,21 +171,19 @@ def doc_list(documents):
   for doc in documents:
     print(doc["type"], doc["number"], doc["name"])
 
-
-def main():
+def main(documents):
   while True:
-    comand = input("comand?: ")
-    if comand == "p":
+    comand = input("enter a comand: ")
+    if comand == 'p':
       print(search_people(documents))
-
-
-  
-
-
-
-
-
-
+    elif comand == 's':
+      print(shelf(directories))
+    elif comand == 'l':
+      print(doc_list(documents))
+    elif comand == 'q':
+      print('exit')
+      break
 
 
 
+main(documents)
