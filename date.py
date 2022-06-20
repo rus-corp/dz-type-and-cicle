@@ -127,6 +127,9 @@
 
 # print(students_list)
 
+from pydoc import doc
+
+
 documents = [
         {"type": "passport", "number": "2207 876234", "name": "Василий Гупкин"},
         {"type": "invoice", "number": "11-2", "name": "Геннадий Покемонов"},
@@ -171,19 +174,50 @@ def doc_list(documents):
   for doc in documents:
     print(doc["type"], doc["number"], doc["name"])
 
-def main(documents):
-  while True:
-    comand = input("enter a comand: ")
-    if comand == 'p':
-      print(search_people(documents))
-    elif comand == 's':
-      print(shelf(directories))
-    elif comand == 'l':
-      print(doc_list(documents))
-    elif comand == 'q':
-      print('exit')
-      break
+def add_doc(documents):
+  type = input("type?: ")
+  number = input("number?: ")
+  name = input("name?: ")
+  place = input("enter place?: ")
+  my_dict = dict(type = type, number = number, name = name)
+  if place in directories:
+    directories[place].append(number)
+    documents.append(my_dict)
+  else:
+    print("Not this place")
+  print(documents)
+  print(directories)
+
+def doc_del(documents):
+  doc_numb = input("doc number?: ")
+  documents_copy = documents.copy()
+  for numb, doc in enumerate(documents_copy):
+    if doc_numb == doc['number']:
+      documents.remove(doc)
+      print(documents)
+    
+
+    
 
 
 
-main(documents)
+# def main(documents):
+#   while True:
+#     comand = input("enter a comand: ")
+#     if comand == 'p':
+#       print(search_people(documents))
+#     elif comand == 's':
+#       print(shelf(directories))
+#     elif comand == 'l':
+#       print(doc_list(documents))
+#     elif comand == 'a':
+#       print(add_doc(documents))
+#     elif comand == 'd'
+#       print(doc_del)
+#     elif comand == 'q':
+#       print('exit')
+#       break
+
+
+
+# main(documents)
