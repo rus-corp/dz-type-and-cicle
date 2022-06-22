@@ -332,34 +332,143 @@
 
 
 
-from unicodedata import name
+# from unicodedata import name
+
+
+# class Character:
+#     name = 'xxx'
+#     power = 0
+#     energy = 100
+#     hands = 2
+
+# class Spider:
+#     power = 0
+#     energy = 50
+#     hands = 8
+    
+#     def webshoot(self):
+#         print('Pew-Pew!')
+
+        
+# class SpiderMan(Character, Spider):
+#   pass
+
+
+# peter_parker = SpiderMan
+# print(peter_parker.name)
+
+
+# class Character:
+#     # перенесем все в init
+#      def __init__(self, name, power, energy=100, hands=2):
+#         self.name = name
+#         self.power = power
+#         self.energy = energy
+#         self.hands = hands
+    
+
+# class Spider:
+#     def __init__(self, power, energy=50, hands=8):
+#         self.power = power
+#         self.energy = energy
+#         self.hands = hands
+    
+#     def webshoot(self):
+#         print('Pew-Pew!')
+
+        
+    
+# class SpiderMan(Character, Spider):
+#     def turn_spider_sense(self):
+#         self.energy -= 10
+#         self.power += 20
+
+              
+        
+# peter_parker = SpiderMan('Peter Parker', 80)
+# print(peter_parker.energy)
+# print(peter_parker.power)
+# print(peter_parker.hands)
+# peter_parker.turn_spider_sense()
+# print(peter_parker.energy)
+# print(peter_parker.power)
+
 
 
 class Character:
-    name = 'xxx'
-    power = 0
-    energy = 100
-    hands = 2
+    def __init__(self, name, power, energy=100, hands=2):
+        self.name = name
+        self.power = power
+        self.energy = energy
+        self.hands = hands
 
+    def move(self):
+        print('Moving on 2 squares')
+    
+    def attack(self, foe):
+        foe.health -= 10
+        
+        
 class Spider:
-    power = 0
-    energy = 50
-    hands = 8
+    def __init__(self, power, energy=50, hands=8):
+        self.power = power
+        self.energy = energy
+        self.hands = hands
     
     def webshoot(self):
         print('Pew-Pew!')
-
+    
+    def move(self):
+        self.webshoot()
+        print('Moving on 1 square')   
         
+    def attack(self, foe):
+        foe.status = 'stunned'
+    
+    
 class SpiderMan(Character, Spider):
-  pass
+    def __init__(self, name, power):
+        super().__init__(name, power)
+        self.backpack = []
+        
+    def turn_spider_sense(self):
+        self.energy -= 10
+        self.power += 20
+    
+    def webshoot(self):
+        if 'web' in self.backpack:
+            super().webshoot() 
+        else:
+            print('No web!')
 
+    def move(self):
+        self.webshoot()
+        print('Moving on 3 square')
+        
+    def attack(self, foe):
+        super().attack(foe)
+        Spider.attack(self, foe)
+        
+#     добавим возможность сравнения персонажей 
+    def __lt__(self, other):
+        if not isinstance(other, Character):
+            print('Not a Character!')
+            return
+        return self.power < other.power
+    
+    def __str__(self):
+        res = f'Сила персонажа = {self.power}'
+        return res
+    
+    
+peter_parker = SpiderMan('Peter Parker', 80)
+miles_morales = SpiderMan('Miles Morales', 80)
 
-print(name)
+print(peter_parker < miles_morales)
+# и даже "больше" будет работать!
+# print(peter_parker > miles_morales)
+# peter_parker.__lt__(miles_morales)
 
-
-
-
-
-
+print(peter_parker)
 
 
