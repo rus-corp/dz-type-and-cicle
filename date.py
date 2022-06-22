@@ -127,74 +127,74 @@
 
 # print(students_list)
 
-from pydoc import doc
+# from pydoc import doc
 
 
-documents = [
-        {"type": "passport", "number": "2207 876234", "name": "Василий Гупкин"},
-        {"type": "invoice", "number": "11-2", "name": "Геннадий Покемонов"},
-        {"type": "insurance", "number": "10006", "name": "Аристарх Павлов"},
-        {"type": "passport", "number": "5455 028765", "name": "Иван Иванов"},
-        {"type": "passport", "number": "2212 645321", "name": "Петр Петров"},
-        {"type": "passport", "number": "9215 900076", "name": "Василий Васильев"},
-        {"type": "passport", "number": "4532 765987", "name": "Антон Куков"},
-        {"type": "passport", "number": "987 654321", "name": "Михаил Фридман"},
-        {"type": "invoice", "number": "13-7", "name": "Константин Пупкин"},
-        {"type": "invoice", "number": "14-5", "name": "Олег Костин"}
-]
-directories = {
-        '1': ['2207 876234', '11-2', '5455 028765'],
-        '2': ['10006', '4532 765987', '13-7'],
-        '3': ['2212 645321', '9215 900076', '14-5'],
-        '4': ['987 654321'],
-        '5': []
-}
-
-
-
-def search_people(documents):
-  doc_numb =input("doc number?: ")
-  for doc in documents:
-    if doc_numb == doc['number']:
-      return f' {doc["name"]} {doc["number"]}'
-  else:
-    print("no this document")
+# documents = [
+#         {"type": "passport", "number": "2207 876234", "name": "Василий Гупкин"},
+#         {"type": "invoice", "number": "11-2", "name": "Геннадий Покемонов"},
+#         {"type": "insurance", "number": "10006", "name": "Аристарх Павлов"},
+#         {"type": "passport", "number": "5455 028765", "name": "Иван Иванов"},
+#         {"type": "passport", "number": "2212 645321", "name": "Петр Петров"},
+#         {"type": "passport", "number": "9215 900076", "name": "Василий Васильев"},
+#         {"type": "passport", "number": "4532 765987", "name": "Антон Куков"},
+#         {"type": "passport", "number": "987 654321", "name": "Михаил Фридман"},
+#         {"type": "invoice", "number": "13-7", "name": "Константин Пупкин"},
+#         {"type": "invoice", "number": "14-5", "name": "Олег Костин"}
+# ]
+# directories = {
+#         '1': ['2207 876234', '11-2', '5455 028765'],
+#         '2': ['10006', '4532 765987', '13-7'],
+#         '3': ['2212 645321', '9215 900076', '14-5'],
+#         '4': ['987 654321'],
+#         '5': []
+# }
 
 
 
-def shelf(directories):
-  doc_numb = input("doc number?: ")
-  for doc_place in directories:
-    if doc_numb in directories[doc_place]:
-      return f'{doc_numb} находится на полке {doc_place}'
-  else:
-    return "NO DOCUMENT"
+# def search_people(documents):
+#   doc_numb =input("doc number?: ")
+#   for doc in documents:
+#     if doc_numb == doc['number']:
+#       return f' {doc["name"]} {doc["number"]}'
+#   else:
+#     print("no this document")
 
-def doc_list(documents):
-  for doc in documents:
-    print(doc["type"], doc["number"], doc["name"])
 
-def add_doc(documents):
-  type = input("type?: ")
-  number = input("number?: ")
-  name = input("name?: ")
-  place = input("enter place?: ")
-  my_dict = dict(type = type, number = number, name = name)
-  if place in directories:
-    directories[place].append(number)
-    documents.append(my_dict)
-  else:
-    print("Not this place")
-  print(documents)
-  print(directories)
 
-def doc_del(documents):
-  doc_numb = input("doc number?: ")
-  documents_copy = documents.copy()
-  for numb, doc in enumerate(documents_copy):
-    if doc_numb == doc['number']:
-      documents.remove(doc)
-      print(documents)
+# def shelf(directories):
+#   doc_numb = input("doc number?: ")
+#   for doc_place in directories:
+#     if doc_numb in directories[doc_place]:
+#       return f'{doc_numb} находится на полке {doc_place}'
+#   else:
+#     return "NO DOCUMENT"
+
+# def doc_list(documents):
+#   for doc in documents:
+#     print(doc["type"], doc["number"], doc["name"])
+
+# def add_doc(documents):
+#   type = input("type?: ")
+#   number = input("number?: ")
+#   name = input("name?: ")
+#   place = input("enter place?: ")
+#   my_dict = dict(type = type, number = number, name = name)
+#   if place in directories:
+#     directories[place].append(number)
+#     documents.append(my_dict)
+#   else:
+#     print("Not this place")
+#   print(documents)
+#   print(directories)
+
+# def doc_del(documents):
+#   doc_numb = input("doc number?: ")
+#   documents_copy = documents.copy()
+#   for numb, doc in enumerate(documents_copy):
+#     if doc_numb == doc['number']:
+#       documents.remove(doc)
+#       print(documents)
     
 
     
@@ -221,3 +221,145 @@ def doc_del(documents):
 
 
 # main(documents)
+
+
+
+# class Character:
+#   name = 'x'
+#   power = 0
+#   energy = 100
+#   hands = 2
+# # print(Character.__dict__)
+
+# peter = Character()
+
+
+# peter.name = 'Peter Parker'
+# peter.power = 70
+# peter.alias = 'Spider-Man'
+
+# # print(peter.__dict__)
+
+# bruce = Character()
+# bruce.name = 'Bruce Wayn'
+# bruce.power = 80
+# bruce.alias = 'Batman'
+
+# class Character:
+#   name = 'x'
+#   power = 0
+#   energy = 100
+#   hands = 2
+#   backpack = []
+
+#   def eat(self, food):
+#     if self.energy < 100:
+#       self.energy += food
+#     else:
+#       print("No hungry")
+
+#   def do_exercise(self, hours):
+#     if self.energy > 0:
+#       self.energy -= hours * 2
+#       self.power += hours * 2 
+#     else: 
+#       print("Too tired")
+
+#   def change_alias(self, new_alias):
+#     print(self)
+#     self.alias = new_alias
+
+
+# bruce = Character()
+# peter = Character()
+
+# peter.backpack.append('Web-shooter')
+
+# print(peter.backpack)
+# print(bruce.backpack)
+
+
+# bruce.name = 'Bruce Wayn'
+# bruce.power = 80
+
+# bruce.change_alias('Batman')
+
+# print(bruce.power)
+# print(bruce.energy)
+# print()
+# bruce.do_exercise(4)
+# print(bruce.power)
+# print(bruce.energy)
+# print()
+# bruce.do_exercise(8)
+# print(bruce.power)
+# print(bruce.energy)
+
+# class Character:
+#   def __init__(self, name, power, energy = 100, hands = 2):
+#     self.name = name
+#     self.power = power
+#     self.energy = energy
+#     self.backpasck = []
+#     self.hands = 2
+
+#   def eat(self, food):
+#     if self.energy < 100:
+#       self.energy += food
+#     else:
+#       print("No hungry")
+
+#   def do_exercise(self, hours):
+#     if self.energy > 0:
+#       self.energy -= hours * 2
+#       self.power += hours * 2 
+#     else: 
+#       print("Too tired")
+
+#   def change_alias(self, new_alias):
+#     print(self)
+#     self.alias = new_alias
+
+#   def beat_up(self, foe):
+#     if not isinstance(foe, Character):
+#       return
+#     if foe.power < self.power:
+#       foe.status = 'defeated'
+#       self.status = 'winer'
+#     else:
+#       print ('Retreat')
+
+
+
+
+from unicodedata import name
+
+
+class Character:
+    name = 'xxx'
+    power = 0
+    energy = 100
+    hands = 2
+
+class Spider:
+    power = 0
+    energy = 50
+    hands = 8
+    
+    def webshoot(self):
+        print('Pew-Pew!')
+
+        
+class SpiderMan(Character, Spider):
+  pass
+
+
+print(name)
+
+
+
+
+
+
+
+
