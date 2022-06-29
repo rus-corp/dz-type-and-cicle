@@ -395,80 +395,248 @@
 
 
 
-class Character:
-    def __init__(self, name, power, energy=100, hands=2):
-        self.name = name
-        self.power = power
-        self.energy = energy
-        self.hands = hands
+# class Character:
+#     def __init__(self, name, power, energy=100, hands=2):
+#         self.name = name
+#         self.power = power
+#         self.energy = energy
+#         self.hands = hands
 
-    def move(self):
-        print('Moving on 2 squares')
+#     def move(self):
+#         print('Moving on 2 squares')
     
-    def attack(self, foe):
-        foe.health -= 10
+#     def attack(self, foe):
+#         foe.health -= 10
         
         
-class Spider:
-    def __init__(self, power, energy=50, hands=8):
-        self.power = power
-        self.energy = energy
-        self.hands = hands
+# class Spider:
+#     def __init__(self, power, energy=50, hands=8):
+#         self.power = power
+#         self.energy = energy
+#         self.hands = hands
     
-    def webshoot(self):
-        print('Pew-Pew!')
+#     def webshoot(self):
+#         print('Pew-Pew!')
     
-    def move(self):
-        self.webshoot()
-        print('Moving on 1 square')   
+#     def move(self):
+#         self.webshoot()
+#         print('Moving on 1 square')   
         
-    def attack(self, foe):
-        foe.status = 'stunned'
+#     def attack(self, foe):
+#         foe.status = 'stunned'
     
     
-class SpiderMan(Character, Spider):
-    def __init__(self, name, power):
-        super().__init__(name, power)
-        self.backpack = []
+# class SpiderMan(Character, Spider):
+#     def __init__(self, name, power):
+#         super().__init__(name, power)
+#         self.backpack = []
         
-    def turn_spider_sense(self):
-        self.energy -= 10
-        self.power += 20
+#     def turn_spider_sense(self):
+#         self.energy -= 10
+#         self.power += 20
     
-    def webshoot(self):
-        if 'web' in self.backpack:
-            super().webshoot() 
-        else:
-            print('No web!')
+#     def webshoot(self):
+#         if 'web' in self.backpack:
+#             super().webshoot() 
+#         else:
+#             print('No web!')
 
-    def move(self):
-        self.webshoot()
-        print('Moving on 3 square')
+#     def move(self):
+#         self.webshoot()
+#         print('Moving on 3 square')
         
-    def attack(self, foe):
-        super().attack(foe)
-        Spider.attack(self, foe)
+#     def attack(self, foe):
+#         super().attack(foe)
+#         Spider.attack(self, foe)
         
-#     добавим возможность сравнения персонажей 
-    def __lt__(self, other):
-        if not isinstance(other, Character):
-            print('Not a Character!')
-            return
-        return self.power < other.power
+# #     добавим возможность сравнения персонажей 
+#     def __lt__(self, other):
+#         if not isinstance(other, Character):
+#             print('Not a Character!')
+#             return
+#         return self.power < other.power
     
-    def __str__(self):
-        res = f'Сила персонажа = {self.power}'
-        return res
+#     def __str__(self):
+#         res = f'Сила персонажа = {self.power}'
+#         return res
     
     
-peter_parker = SpiderMan('Peter Parker', 80)
-miles_morales = SpiderMan('Miles Morales', 80)
+# peter_parker = SpiderMan('Peter Parker', 80)
+# miles_morales = SpiderMan('Miles Morales', 80)
 
-print(peter_parker < miles_morales)
-# и даже "больше" будет работать!
-# print(peter_parker > miles_morales)
-# peter_parker.__lt__(miles_morales)
+# print(peter_parker < miles_morales)
+# # и даже "больше" будет работать!
+# # print(peter_parker > miles_morales)
+# # peter_parker.__lt__(miles_morales)
 
-print(peter_parker)
+# print(peter_parker)
 
+
+# class Character:
+#     def __init__(self, name, power, energy=100, hands=2):
+#         self.name = name
+#         self.power = power
+#         self.energy = energy
+#         self.hands = hands
+
+#     def move(self):
+#         print('Moving on 2 squares')
+
+# class Spider:
+#     def __init__(self, power, energy=50, hands=8):
+#         self.power = power
+#         self.energy = energy
+#         self.hands = hands
+    
+#     def webshoot(self):
+#         print('Pew-Pew!')
+    
+#     def move(self):
+#         self.webshoot()
+#         print('Moving on 1 square')   
+    
+# class SpiderMan(Character, Spider):
+#     # мы полностью наследуем от родителя инициализацию и добавляем новый атрибут для экземпляра
+#     def __init__(self, name, power):
+#         super().__init__(name, power)
+#         self.backpack = []
+        
+#     def turn_spider_sense(self):
+#         self.energy -= 10
+#         self.power += 20
+
+#     def move(self):
+#         self.webshoot()
+#         print('Moving on 3 square')
+
+
+# peter_parker = SpiderMan('Peter Parker', 80)
+# print(peter_parker.backpack)
+# print(peter_parker.name)
+# print(peter_parker.power)
+# print(peter_parker.energy)
+# print(peter_parker.hands)
+
+
+
+
+# grades = {'Phyton':[10, 9, 8, 7, 8, 6, 3]}
+# print(f"{round(sum(grades['Phyton']) / len(grades['Phyton']))}" )
+
+# class Student:
+#     def __init__(self, name, surname, gender):
+#         self.name = name
+#         self.surname = surname
+#         self.gender = gender
+#         self.finished_courses = []
+#         self.courses_in_progress = []
+#         self.grades = {}
+
+        
+    
+#     def sr_gr(self, student, grades):
+#         for grade in grades:
+#             rest = sum(grade) / len(grade)
+#             return rest
+    
+
+
+    # def rate_hw(self, lecturer, course, grade):
+    #     if isinstance(lecturer, Lecturer) and course in self.courses_attached and course in self.courses_in_progress:
+    #         if course in lecturer.grades:
+    #             lecturer.grades[course] += [grade]
+    #         else:
+    #             lecturer.grades[course] = [grade]
+    #     else:
+    #         return 'Ошибка'
+
+
+
+
+    # def __str__(self):
+    #     res = f'Имя: {self.name}\n Фамилия:{self.surname}\n Средняя оценка за домашние задания: {}\n Курсы в процессе изучения: {self.courses_in_progress}\n Завершенные курсы: {self.finished_courses}'
+    #     return res
+
+
+# class Student:
+#     def __init__(self, name, surname, gender):
+#         self.name = name
+#         self.surname = surname
+#         self.gender = gender
+#         self.finished_courses = []
+#         self.courses_in_progress = []
+#         self.grades = {}
+#         self.av_grade = []
+        
+
+#     def av_grade(self, student, grades):
+#         for grade in grades.values():
+#             res = sum(student['grade'] / len(student['grade']))
+#             return self.av_grade.append(res)
+            
+
+
+#     # def __str__(self):
+#     #     res = f'Имя: {self.name}\n Фамилия:{self.surname}\n Средняя оценка за домашние задания: {}\n Курсы в процессе изучения: {self.courses_in_progress}\n Завершенные курсы: {self.finished_courses}'
+#     #     return res
+
+
+        
+# class Mentor:
+#     def __init__(self, name, surname):
+#         self.name = name
+#         self.surname = surname
+#         self.courses_attached = []
+        
+#     def rate_hw(self, student, course, grade):
+#         if isinstance(student, Student) and course in self.courses_attached and course in student.courses_in_progress:
+#             if course in student.grades:
+#                 student.grades[course] += [grade]
+#             else:
+#                 student.grades[course] = [grade]
+#         else:
+#             return 'Ошибка'
+ 
+# best_student = Student('Ruoy', 'Eman', 'your_gender')
+# best_student.courses_in_progress += ['Python']
+# best_student.courses_in_progress += ['Git']
+ 
+# cool_mentor = Mentor('Some', 'Buddy')
+# cool_mentor.courses_attached += ['Python']
+# cool_mentor.courses_attached += ['Git']
+ 
+# cool_mentor.rate_hw(best_student, 'Python', 10)
+# cool_mentor.rate_hw(best_student, 'Python', 9)
+# cool_mentor.rate_hw(best_student, 'Python', 8)
+
+# cool_mentor.rate_hw(best_student, 'Git', 7)
+# cool_mentor.rate_hw(best_student, 'Git', 6)
+# cool_mentor.rate_hw(best_student, 'Git', 4)
+ 
+# print(best_student.grades)
+# # print(best_student.finished_courses)
+# print(best_student.courses_in_progress)
+# print(best_student.av_grade)
+
+
+dish_name = 'Омлет' 
+person_count = 5 
+cook_book = {
+  'Омлет': [
+    {'ingredient_name': 'Яйцо', 'quantity': 2, 'measure': 'шт.'},
+    {'ingredient_name': 'Молоко', 'quantity': 100, 'measure': 'мл'},
+    {'ingredient_name': 'Помидор', 'quantity': 2, 'measure': 'шт'}
+    ],
+  'Утка по-пекински': [
+    {'ingredient_name': 'Утка', 'quantity': 1, 'measure': 'шт'},
+    {'ingredient_name': 'Вода', 'quantity': 2, 'measure': 'л'},
+    {'ingredient_name': 'Мед', 'quantity': 3, 'measure': 'ст.л'},
+    {'ingredient_name': 'Соевый соус', 'quantity': 60, 'measure': 'мл'}
+    ],
+  'Запеченный картофель': [
+    {'ingredient_name': 'Картофель', 'quantity': 1, 'measure': 'кг'},
+    {'ingredient_name': 'Чеснок', 'quantity': 3, 'measure': 'зубч'},
+    {'ingredient_name': 'Сыр гауда', 'quantity': 100, 'measure': 'г'},
+    ]
+  }
 
