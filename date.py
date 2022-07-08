@@ -619,24 +619,157 @@
 # print(best_student.av_grade)
 
 
-dish_name = 'Омлет' 
-person_count = 5 
-cook_book = {
-  'Омлет': [
-    {'ingredient_name': 'Яйцо', 'quantity': 2, 'measure': 'шт.'},
-    {'ingredient_name': 'Молоко', 'quantity': 100, 'measure': 'мл'},
-    {'ingredient_name': 'Помидор', 'quantity': 2, 'measure': 'шт'}
-    ],
-  'Утка по-пекински': [
-    {'ingredient_name': 'Утка', 'quantity': 1, 'measure': 'шт'},
-    {'ingredient_name': 'Вода', 'quantity': 2, 'measure': 'л'},
-    {'ingredient_name': 'Мед', 'quantity': 3, 'measure': 'ст.л'},
-    {'ingredient_name': 'Соевый соус', 'quantity': 60, 'measure': 'мл'}
-    ],
-  'Запеченный картофель': [
-    {'ingredient_name': 'Картофель', 'quantity': 1, 'measure': 'кг'},
-    {'ingredient_name': 'Чеснок', 'quantity': 3, 'measure': 'зубч'},
-    {'ingredient_name': 'Сыр гауда', 'quantity': 100, 'measure': 'г'},
-    ]
-  }
+# dish_name = 'Омлет' 
+# person_count = 5 
+# cook_book = {
+#   'Омлет': [
+#     {'ingredient_name': 'Яйцо', 'quantity': 2, 'measure': 'шт.'},
+#     {'ingredient_name': 'Молоко', 'quantity': 100, 'measure': 'мл'},
+#     {'ingredient_name': 'Помидор', 'quantity': 2, 'measure': 'шт'}
+#     ],
+#   'Утка по-пекински': [
+#     {'ingredient_name': 'Утка', 'quantity': 1, 'measure': 'шт'},
+#     {'ingredient_name': 'Вода', 'quantity': 2, 'measure': 'л'},
+#     {'ingredient_name': 'Мед', 'quantity': 3, 'measure': 'ст.л'},
+#     {'ingredient_name': 'Соевый соус', 'quantity': 60, 'measure': 'мл'}
+#     ],
+#   'Запеченный картофель': [
+#     {'ingredient_name': 'Картофель', 'quantity': 1, 'measure': 'кг'},
+#     {'ingredient_name': 'Чеснок', 'quantity': 3, 'measure': 'зубч'},
+#     {'ingredient_name': 'Сыр гауда', 'quantity': 100, 'measure': 'г'},
+#     ]
+#   }
 
+# +71234567890 +71234567854 +61234576890 +52134567890 +21235777890 +21234567110 +71232267890
+# s = input().split()
+# d = {}
+# for a in s:
+#     for b in a:
+#         b = a[:2]
+#     d.setdefault(b,[]).append(a)
+# print(*sorted(d.items()))
+
+
+
+# lst =input().split()
+# lst1 = [lst[i].split('=') for i in range(len(lst))]
+# d = dict(lst1)
+# for key in d:
+#     d[key] = int(d[key])
+# print(*sorted(d.items()))
+
+
+
+# +71234567890 +71234567854 +61234576890 +52134567890 +21235777890 +21234567110 +71232267890
+# for i in s:
+#     a = i.split("=")
+#     d[a[0]] = a[1]
+# # print(d)
+# s = input().split()
+# d = {}
+# for a in s:
+#     for b in a:
+#         b = a[:2]
+#     d.setdefault(b,[]).append(a)
+# print(*sorted(d.items()))
+
+# phone_numbers = [i for i in input().split()]
+# print(type(phone_numbers))
+
+
+# print(s)
+# s = d.copy()
+# for k in s.keys():
+#     if k =="3":
+#         del d["3"]
+#     if k == "False":
+#         del d["False"]
+#
+# print(*sorted(d.items()))
+
+# list_in = ['+71234567890 Сергей', '+71234567810 Сергей', '+51234567890 Михаил', '+72134567890 Николай']
+# d = {}
+# for a in list_in:
+#     b = list(a.split())
+#     n = b[1]
+#     p = b[0]
+#     d.setdefault(n, []).append(p)
+# print(*sorted(d.items()))
+
+# d = {}
+# n = 1
+# while n != 0:
+#     n = int(input())
+#     if n not in d and n != 0:
+#         d[n] = round((n ** 0.5), 2)
+#         print(d[n])
+#     elif n in d:
+#         print("значение из кэша:", d[n])
+#     else:
+#         break
+
+
+# lst_in = ['ustanovka-i-zapusk-yazyka', 'ustanovka-i-poryadok-raboty-pycharm',
+#           'peremennyye-operator-prisvaivaniya-tipy-dannykh', 'arifmeticheskiye-operatsii',
+#           'ustanovka-i-poryadok-raboty-pycharm']
+#
+# a = lst_in.copy()
+# d = dict(zip(lst_in, a))
+#
+#
+#
+
+# .-- ... . -...- .-- . .-. -. ---
+# morze1 = {'а': '.-', 'б': '-...', 'в': '.--', 'г': '--.', 'д': '-..',
+#          'е': '.', 'ж': '...-', 'з': '--..', 'и': '..', 'й': '.---', 'к': '-.-', 'л': '.-..',
+#          'м': '--', 'н': '-.', 'о': '---', 'п': '.--.', 'р': '.-.', 'с': '...', 'т': '-', 'у': '..-',
+#          'ф': '..-.', 'х': '....', 'ц': '-.-.', 'ч': '---.', 'ш': '----', 'щ': '--.-', 'ъ': '--.--', 'ы': '-.--',
+#          'ь': '-..-', 'э': '..-..', 'ю': '..--', 'я': '.-.-', ' ': '-...-'}
+# d = dict(zip(morze1.values(), morze1.keys()))
+# s = input().split()
+# for a in s:
+#     print(d[a])
+
+
+# morze = {'а': '.-', 'б': '-...', 'в': '.--', 'г': '--.', 'д': '-..', 'е': '.', 'ж': '...-', 'з': '--..', 'и': '..', 'й': '.---', 'к': '-.-', 'л': '.-..', 'м': '--',
+#          'н': '-.', 'о': '---', 'п': '.--.', 'р': '.-.', 'с': '...', 'т': '-', 'у': '..-',
+#          'ф': '..-.', 'х': '....', 'ц': '-.-.', 'ч': '---.', 'ш': '----', 'щ': '--.-',
+#          'ъ': '--.--', 'ы': '-.--', 'ь': '-..-', 'э': '..-..', 'ю': '..--', 'я': '.-.-', ' ': '-...-'}
+#
+# mor2={j:i for i,j in morze.items()}
+#
+#
+# text = input().split()
+#
+# print("".join(mor2[word] for word in text))
+
+# d = {}
+# lst = list(map(int, input().split()))
+# for a in lst:
+#     if a not in d:
+#         d[a] = a
+#     else:continue
+#
+# print(*d.values())
+# d = {}
+# lst_in = ['3 Сергей', '5 Николай', '4 Елена', '7 Владимир', '5 Юлия', '4 Светлана']
+# for x in lst_in:
+#     a = x.split()
+#     if a[0] in d:
+#         d[a[0]] += [a[1]]
+#     else:
+#         d[a[0]] = [a[1]]
+# for k, v in d.items():
+#      print(k+':', ', '.join(v))       #для вывода: 3: Сергей 5: Николай, Юлия  4: Елена, Светлана  7: Владимир
+
+# weight = 10000
+# things = {'карандаш': 20, 'зеркальце': 100, 'зонт': 500, 'рубашка': 300,
+#           'брюки': 1000, 'бумага': 200, 'молоток': 600, 'пила': 400, 'удочка': 1200,
+#           'расческа': 40, 'котелок': 820, 'палатка': 5240, 'брезент': 2130, 'спички': 10}
+# bacpack = []
+# d = sorted(things.items(), key=lambda x: -x[1]) #сортировка словаря по значениям
+# for k in d:
+#     if k[1] < weight:
+#         bacpack.append(k[0])
+#         weight -= k[1]
+# print(bacpack)
